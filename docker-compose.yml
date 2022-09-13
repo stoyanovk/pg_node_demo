@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  server:
+    build: './server'
+    command: npm run start
+    environment:
+      POSTGRES_HOST: '127.0.0.1'
+      POSTGRES_USER: postgres
+      POSTGRES_DB: interview_db
+      POSTGRES_PASSWORD: '12345678'
+      POSTGRES_PORT: 5432
+    volumes:
+      - ./server:/work/server
+    ports:
+      - '3000:3000'
+
+  postgress_bd:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_HOST: '127.0.0.1'
+      POSTGRES_USER: postgres
+      POSTGRES_DB: interview_db
+      POSTGRES_PASSWORD: '12345678'
+      POSTGRES_PORT: 5432
+    volumes:
+      - pgdata:/var/lib/postgresql/db
+    ports:
+      - '5432:5432'
+
+volumes:
+  pgdata:

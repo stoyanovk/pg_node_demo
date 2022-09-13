@@ -1,0 +1,23 @@
+{
+  "name": "simple-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "migrate-create": "db-migrate create $NAME --sql-file",
+    "migrate-up": "db-migrate up",
+    "migrate-down": "db-migrate down"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
+    "pg": "^8.7.3"
+  }
+}

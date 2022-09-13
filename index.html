@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8] // 36
+    function getSum(arr) {
+      let total = 0
+      for (let v of arr) {
+        total += v
+      }
+      return total
+    }
+
+    function getRecSum(a) {
+      console.log(a)
+      if (a.length === 1) {
+        return a[0]
+      }
+      let val = a.pop()
+      return val + getRecSum(a)
+    }
+
+    console.log(getRecSum(arr))
+  </script>
+</html>
