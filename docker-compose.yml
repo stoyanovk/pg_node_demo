@@ -16,6 +16,14 @@ services:
       - '3000:3000'
     depends_on:
       - postgress_bd
+    
+  migrate:
+    image: pg_node_demo_server
+    command: npm run migrate-up
+    volumes:
+      - ./server:/work/server
+    depends_on:
+      - postgress_bd
 
   postgress_bd:
     image: postgres:14
