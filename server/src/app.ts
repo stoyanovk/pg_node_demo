@@ -9,7 +9,7 @@ const pool = new pg.Pool({
   password: POSTGRES_PASSWORD,
   port: POSTGRES_PORT,
 });
-
+const a = 1;
 console.log(pool);
 const server = http.createServer((req, res) => {
   res.statusCode = 200;

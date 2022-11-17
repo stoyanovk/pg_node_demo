@@ -3,7 +3,7 @@ version: '3'
 services:
   server:
     build: './server'
-    command: npm run start
+    command: npm run dev
     environment:
       POSTGRES_HOST: '127.0.0.1'
       POSTGRES_USER: postgres
