@@ -1,13 +1,13 @@
 import { Question } from '../../entities/Question';
 
-export interface getAllQuestionUseCase {
+export interface GetAllQuestionUseCase {
   execute(): Promise<Question[]>;
 }
 
-export interface getQuestionByIdUseCase {
+export interface GetQuestionByIdUseCase {
   execute(id: number): Promise<Question>;
 }
 
-export interface createQuestionUseCase {
+export interface CreateQuestionUseCase {
   execute(value: string): Promise<Question>;
 }

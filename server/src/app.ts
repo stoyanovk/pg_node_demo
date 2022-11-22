@@ -1,22 +1,19 @@
-import pg from 'pg';
-import * as http from 'http';
+// import pg from 'pg';
+import Koa from 'koa';
 
-const { POSTGRES_HOST, POSTGRES_USER, POSTGRES_DB, POSTGRES_PASSWORD, POSTGRES_PORT } = process.env;
-const pool = new pg.Pool({
-  user: POSTGRES_USER,
-  host: POSTGRES_HOST,
-  database: POSTGRES_DB,
-  password: POSTGRES_PASSWORD,
-  port: POSTGRES_PORT,
-});
-const a = 1;
-console.log(pool);
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World!!!');
-});
+import { initMiddleware } from './presentation/middleware/middleware';
+// import { createQuestionRoutes } from './presentation/routers/question-router';
 
-server.listen(3000, () => {
-  console.log(`Server running at port 3000`);
-});
+export const app = new Koa();
+initMiddleware(app);
+// const { POSTGRES_HOST, POSTGRES_USER, POSTGRES_DB, POSTGRES_PASSWORD, POSTGRES_PORT } = process.env;
+// const pool = new pg.Pool({
+//   user: POSTGRES_USER,
+//   host: POSTGRES_HOST,
+//   database: POSTGRES_DB,
+//   password: POSTGRES_PASSWORD,
+//   port: POSTGRES_PORT,
+// });
+// createQuestionRoutes(
+
+// );
